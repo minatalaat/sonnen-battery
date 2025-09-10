@@ -1,7 +1,4 @@
-import { liteColors } from './colors/colors';
-
-export const liteTheme = {
-  colors: liteColors,
+export const appTheme = {
   spacing: {
     xxs: '0.25rem',
     xs: '0.5rem',

@@ -1,9 +1,9 @@
 import { useMemo, useState, type ReactNode } from "react"
 import { AppTheme } from "./AppTheme"
 import { MODES } from "../constants/modes"
-import { darkTheme } from "../themes/darkTheme"
-import { liteTheme } from "../themes/liteTheme"
 import { ThemeProvider } from 'styled-components';
+import { appTheme } from "../themes/theme"
+import { darkColors, liteColors } from "../themes/colors/colors"
 
 
 interface AppThemeProviderType {
@@ -18,17 +18,17 @@ const AppThemeProvider: React.FC<AppThemeProviderType> = ({ children }) => {
         return setMode(MODES.LITE)
     }
 
-    const theme = useMemo(() => {
-        if (mode === MODES.DARK) return darkTheme;
-        return liteTheme
+    const modetheme = useMemo(() => {
+        if (mode === MODES.DARK) return { ...appTheme, colors: darkColors };
+        return { ...appTheme, colors: liteColors };
     }, [mode])
 
     const contextValue = useMemo(() => {
-        return { theme, toggleTheme }
-    }, [theme])
+        return { theme: modetheme, toggleTheme }
+    }, [modetheme])
 
     return (
-        <AppTheme.Provider value={contextValue}><ThemeProvider theme={theme}> {children} </ThemeProvider></AppTheme.Provider>
+        <AppTheme.Provider value={contextValue}><ThemeProvider theme={modetheme}> {children} </ThemeProvider></AppTheme.Provider>
     )
 }
 
