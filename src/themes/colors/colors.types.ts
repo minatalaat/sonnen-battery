@@ -4,6 +4,9 @@ export interface ColorsType {
   secondary: string;
   liteSecondary: string;
   charging: string;
-  consuming: string;
+  liteCharing: string;
+  discharging: string;
+  liteDisCharing: string;
   background: string;
+  border: string;
 }

@@ -35,4 +35,20 @@ export interface ThemeType {
     xxl: string;
     circle: string;
   };
+  chart: {
+    spacing: {
+      sm: number;
+      m: number;
+    };
+    barSize: {
+      s1: number;
+    };
+  };
+  boxShadow: {
+    s1: string;
+    s2: string;
+    s3: string;
+    s4: string;
+    s5: string;
+  };
 }
