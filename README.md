@@ -38,7 +38,7 @@ git clone https://github.com/minatalaat/sonnen-battery.git
 2. Navigate to the project directory:
 
 ```bash
-cd sonen-battery
+cd sonnen-battery
 ```
 
 3. Install dependencies:
