@@ -12,4 +12,5 @@ export interface ColorsType {
   background: string;
   border: string;
   hightLightColor: string;
+  error: string;
 }

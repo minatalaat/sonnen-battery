@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { ToggleInput } from "./ToggleButton.styles"
-import { MODES } from "../../../constants/modes";
+import { MODES } from "../../../constants/modes.contants";
 
 interface ToggleButtonProps {
     name: string;

@@ -18,8 +18,9 @@ const Home: React.FC = () => {
             const res = await getChargeLevels();
             if (!res?.status) return null;
             return formatChargeLevelAsSegements(res?.data);
+
         } catch {
-            return null;
+            throw new Error("Failed To Fetch Charging Data");
         }
     };
 
@@ -30,6 +31,9 @@ const Home: React.FC = () => {
         refetchInterval: 60 * 60 * 1000, // refetch after 1 hour
     });
 
+    if (error) {
+        throw new Error("Failed To Fetch Charging Data");
+    }
     return (
         <Container fluid>
             <Row nogutter>
@@ -41,7 +45,7 @@ const Home: React.FC = () => {
                 </Col>
 
                 <Col sm={12}>
-                    {isLoading || error ? <PlaceHolder /> : null}
+                    {isLoading ? <PlaceHolder /> : null}
                     {!isLoading && data && (
                         <ChartContainer>
                             <Chart data={data} xData={{ key: 'date', label: 'Time' }} yData={{ key: 'chargingLevel', label: 'Level' }} />

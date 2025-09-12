@@ -9,9 +9,11 @@ export const liteColors = {
   liteCharing: '#90bc74ff',
   discharging: '#c98f1f',
   liteDisCharing: '#ba9958ff',
-  background: '#f5f5f5ff',
+  background: '#e6e1e1ff',
   border: '#f0f2f3',
   hightLightColor: '#cbc7c7ff',
+  error: '#F75270',
+  chartBackground: '#f5f5f5ff',
 };
 
 export const darkColors = {
@@ -25,7 +27,9 @@ export const darkColors = {
   liteCharing: '#90bc74ff',
   discharging: '#c98f1f',
   liteDisCharing: '#ba9958ff',
-  background: '#37353E',
+  background: '#3b3a3dff',
   border: '#b7bdc0ff',
   hightLightColor: '#5d5656ff',
+  error: '#eb7859ff',
+  chartBackground: '#37353E',
 };

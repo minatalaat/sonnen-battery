@@ -1,5 +1,5 @@
 import { sonnenApi } from '../apis/sonnenApi';
-import { endPoints } from '../constants/endpoints';
+import { endPoints } from '../constants/endpoints.constants';
 import type { ChargelevelDTO } from '../dtos/chargeLevels.types';
 
 const checkValidChargeEvent = (chargeLevel: ChargelevelDTO) => {

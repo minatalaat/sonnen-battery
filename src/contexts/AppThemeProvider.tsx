@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from "react"
 import { AppTheme } from "./AppTheme"
-import { MODES } from "../constants/modes"
+import { MODES } from "../constants/modes.contants"
 import { ThemeProvider } from 'styled-components';
 import { appTheme } from "../themes/theme"
 import { darkColors, liteColors } from "../themes/colors/colors"
