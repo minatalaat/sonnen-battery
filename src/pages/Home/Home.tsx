@@ -15,9 +15,9 @@ const Home: React.FC = () => {
 
     const getData = async () => {
         try {
-            const res = await getChargeLevels();
-            if (!res?.status) return null;
-            return formatChargeLevelAsSegements(res?.data);
+            // const res = await getChargeLevels();
+            // if (!res?.status) return null;
+            // return formatChargeLevelAsSegements(res?.data);
 
         } catch {
             throw new Error("Failed To Fetch Charging Data");
