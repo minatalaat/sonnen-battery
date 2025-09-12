@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import type { ThemeType } from '../../../../themes/theme.types';
 
 export const TooltipContainer = styled.div<{ theme: ThemeType }>`
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.chartBackground};
   border: ${({ theme }) => `1px solid ${theme.colors.border}`};
   box-shadow: ${({ theme }) => theme.boxShadow.s3};
   padding: ${({ theme }) => theme.spacing.sm};
@@ -13,6 +13,7 @@ export const TooltipContainer = styled.div<{ theme: ThemeType }>`
   border-radius: 999px;
   height: 20px !important;
   width: 50px !important;
+
   .content {
     height: min-content;
     display: flex;

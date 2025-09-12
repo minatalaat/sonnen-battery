@@ -2,29 +2,38 @@ import type React from 'react';
 import { TooltipContainer } from './ChartTooltip.styles';
 import Typography from '../../Typography/Typography';
 
+interface ChartTooltipPayloadItem {
+    payload: {
+        status?: string;
+        chargingLevel?: number;
+        [key: string]: unknown;
+    };
+    [key: string]: unknown;
+}
 
 interface ChartTooltipProps {
-    payload?: any[];
-    active?: boolean
+    payload?: ChartTooltipPayloadItem[];
+    active?: boolean;
 }
 
 const ChartTooltip: React.FC<ChartTooltipProps> = ({ active, payload }) => {
     if (active && payload && payload.length) {
-
-        console.log(payload);
         const data = payload?.[0]?.payload;
-
-
+        const STATUS_ICONS = {
+            'charging': <span className="icon">🔋</span>,
+            'discharging': <span className="icon">⚡️</span>,
+            'idle': <span className="icon">📴</span>,
+        }
         return (
-            <TooltipContainer >
+            <TooltipContainer>
                 <div className="content">
-                    {data?.status === 'charging' ? <span className="icon">⚡️</span> : <span className="icon">🔋</span>}
-                    <Typography variant='mdText'>{`${data?.chargingLevel}%`}</Typography>
+                    {STATUS_ICONS[(data.status ?? 'charging') as 'charging' | 'discharging' | 'idle']}
+                    <Typography variant="lgText">{`${data?.chargingLevel}%`}</Typography>
                 </div>
             </TooltipContainer>
         );
     }
-    return null
+    return null;
 };
 
 export default ChartTooltip;
