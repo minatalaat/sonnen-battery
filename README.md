@@ -65,7 +65,8 @@ The application should now be accessible in your web browser at `http://localhos
 
 ## A Glimpse of the App
 
-[Image or GIF of the application's main user interface goes here]
+<img width="1912" height="852" alt="image" src="https://github.com/user-attachments/assets/c7eb2528-e59d-4d15-9e5c-7f86702380bb" />
+
 
 ## Design Decisions & Architectural Choices
 
