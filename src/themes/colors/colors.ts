@@ -27,5 +27,5 @@ export const darkColors = {
   liteDisCharing: '#ba9958ff',
   background: '#37353E',
   border: '#b7bdc0ff',
-  hightLightColor: ' #6a6363ff',
+  hightLightColor: '#5d5656ff',
 };
