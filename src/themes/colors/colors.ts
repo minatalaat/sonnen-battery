@@ -4,12 +4,14 @@ export const liteColors = {
   secondary: '#767676ff',
   liteSecondary: '#cccccc',
   charging: '#58ba1a',
-  idle: 'lightblue',
+  idle: 'blue',
+  liteIdle: 'lightblue',
   liteCharing: '#90bc74ff',
   discharging: '#c98f1f',
   liteDisCharing: '#ba9958ff',
   background: '#f5f5f5ff',
   border: '#f0f2f3',
+  hightLightColor: '#cbc7c7ff',
 };
 
 export const darkColors = {
@@ -17,11 +19,13 @@ export const darkColors = {
   litePrimary: '#cccccc',
   secondary: '#010101ff',
   liteSecondary: '#010101ff',
-  idle: 'lightblue',
+  idle: 'blue',
+  liteIdle: 'lightblue',
   charging: '#58ba1a',
   liteCharing: '#90bc74ff',
   discharging: '#c98f1f',
   liteDisCharing: '#ba9958ff',
   background: '#37353E',
   border: '#b7bdc0ff',
+  hightLightColor: ' #6a6363ff',
 };

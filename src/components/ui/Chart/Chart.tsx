@@ -4,7 +4,7 @@ import type { ChargeLevelWithStatusDTO } from '../../../dtos/chargeLevels.types'
 import { useAppTheme } from '../../../contexts';
 import { ChartTooltip } from './ChartTooltip';
 import { ChartLegend } from './ChartLegend';
-import useBreakpointCheck from '../../../hooks/useBreakPointCheck';
+import useBreakpointCheck from '../../../hooks/useBreakpointCheck';
 
 interface ChartProps {
     data: Array<ChargeLevelWithStatusDTO> | null;
@@ -12,11 +12,12 @@ interface ChartProps {
     yData: { key: string; label?: string; domain?: Array<number> };
 }
 
+
 const Chart: React.FC<ChartProps> = ({ data, xData, yData }) => {
     const { theme } = useAppTheme();
     const isMobile = useBreakpointCheck(768)
     return (
-        <ResponsiveContainer width="100%" height={'100%'}>
+        <ResponsiveContainer width="100%" height='100%'>
             <BarChart
                 data={data ?? []}
                 margin={{
@@ -54,6 +55,7 @@ const Chart: React.FC<ChartProps> = ({ data, xData, yData }) => {
                         value={yData.label}
                         position="center"
                         angle={-90}
+                        dx={-theme.chart.spacing.s}
                         fontFamily={theme.fonts.family}
                         fontSize={theme.typoGraphy.fontSize.s4}
                         fill={theme.colors.primary}
@@ -69,7 +71,7 @@ const Chart: React.FC<ChartProps> = ({ data, xData, yData }) => {
                             data={[
                                 { label: 'Charging', color: theme.colors.liteCharing },
                                 { label: 'Discharging', color: theme.colors.liteDisCharing },
-                                { label: 'idle', color: theme.colors.idle },
+                                { label: 'idle', color: theme.colors.liteIdle },
 
                             ]}
                         />
@@ -78,6 +80,7 @@ const Chart: React.FC<ChartProps> = ({ data, xData, yData }) => {
                         paddingBottom: isMobile ? theme.spacing.sm : undefined,
                     }}
                 />
+
                 <Bar
                     barSize={theme.chart.barSize.s1}
                     type="monotone"

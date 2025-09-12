@@ -11,11 +11,18 @@ interface AppThemeProviderType {
 }
 
 const AppThemeProvider: React.FC<AppThemeProviderType> = ({ children }) => {
-    const [mode, setMode] = useState<string>(MODES.LITE)
+    const localMode = localStorage.getItem('mode')
+    const [mode, setMode] = useState<string>(localMode ?? MODES.LITE)
 
     const toggleTheme = () => {
-        if (mode === MODES.LITE) return setMode(MODES.DARK)
-        return setMode(MODES.LITE)
+        if (mode === MODES.LITE) {
+            localStorage.setItem('mode', MODES.DARK)
+            setMode(MODES.DARK)
+        }
+        else {
+            localStorage.setItem('mode', MODES.LITE)
+            setMode(MODES.LITE)
+        }
     }
 
     const modetheme = useMemo(() => {

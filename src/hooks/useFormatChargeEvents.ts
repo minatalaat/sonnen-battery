@@ -7,7 +7,7 @@ export const useFormatChargeEvents = () => {
   const getColor = (state: string): string => {
     if (state === 'charging') return theme.colors.liteCharing;
     if (state === 'discharging') return theme.colors.liteDisCharing;
-    return theme.colors.idle;
+    return theme.colors.liteIdle;
   };
 
   const formatChargeLevelAsSegements = (data: Array<ChargelevelDTO>) => {
