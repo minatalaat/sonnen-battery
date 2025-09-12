@@ -1,1 +1,2 @@
-export { default as ChartContainer } from './ChartContainer';
+import ChartContainer from './ChartContainer';
+export default ChartContainer;

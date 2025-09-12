@@ -1,1 +1,2 @@
-export { default as AppErrorBoundary } from './AppErrorBoundary';
+import AppErrorBoundary from './AppErrorBoundary';
+export default AppErrorBoundary;

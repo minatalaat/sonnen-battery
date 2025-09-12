@@ -2,12 +2,12 @@ import { Col, Container, Row } from 'react-grid-system';
 import Typography from '../../components/ui/Typography/Typography';
 import { useAppTheme } from '../../contexts/AppTheme';
 import { getChargeLevels } from '../../services/chargeLevels.services';
-import { Chart } from '../../components/ui/Chart';
 import { useFormatChargeEvents } from '../../hooks/useFormatChargeEvents';
-import { ChartContainer } from '../../components/ui/ChartContainer';
 import ThemeController from '../../components/ui/ThemeController/ThemeController';
 import PlaceHolder from '../../components/ui/PlaceHolder/PlaceHolder';
 import { useQuery } from '@tanstack/react-query';
+import ChartContainer from '../../components/ui/ChartContainer';
+import Chart from '../../components/ui/Chart';
 
 const Home: React.FC = () => {
     const { theme } = useAppTheme();

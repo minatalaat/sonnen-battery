@@ -1,10 +1,11 @@
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AppErrorBoundary from './components/ui/AppErrorBoundary';
+import AppLayout from './components/ui/AppLayout';
+import AppRoutes from './routes/AppRoutes';
 
-import { AppErrorBoundary } from './components/ui/AppErrorBoundary';
-import { AppRoutes } from './routes/AppRoutes';
-import { AppLayout } from './components/ui/AppLayout';
+
 
 const queryClient = new QueryClient({
   defaultOptions: {

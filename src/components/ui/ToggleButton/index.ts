@@ -1,1 +1,2 @@
-export { default as ToggleButton } from './ToggleButton';
+import ToggleButton from './ToggleButton';
+export default ToggleButton;

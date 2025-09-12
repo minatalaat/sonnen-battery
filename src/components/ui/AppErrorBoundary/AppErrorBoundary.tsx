@@ -1,8 +1,8 @@
 import { Row, Col, Container } from "react-grid-system";
 import { useAppTheme } from "../../../contexts";
-import { Button } from "../Button";
 import Typography from "../Typography/Typography";
 import { StyledAppErrorBoundary } from "./AppErrorBoundary.styles"
+import Button from "../Button";
 
 type AppErrorBoundaryProps = {
     error: Error;

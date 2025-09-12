@@ -1,7 +1,7 @@
 import type React from 'react';
 import Typography from '../Typography/Typography';
-import { ToggleButton } from '../ToggleButton';
 import { useAppTheme } from '../../../contexts';
+import ToggleButton from '../ToggleButton';
 
 const ThemeController: React.FC = () => {
     const { toggleTheme } = useAppTheme();

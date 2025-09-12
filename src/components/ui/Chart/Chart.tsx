@@ -2,9 +2,9 @@ import React from 'react';
 import { Bar, BarChart, CartesianGrid, Label, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import type { ChargeLevelWithStatusDTO } from '../../../dtos/chargeLevels.types';
 import { useAppTheme } from '../../../contexts';
-import { ChartTooltip } from './ChartTooltip';
-import { ChartLegend } from './ChartLegend';
 import useBreakpointCheck from '../../../hooks/useBreakpointCheck';
+import ChartTooltip from './ChartTooltip';
+import ChartLegend from './ChartLegend';
 
 interface ChartProps {
     data: Array<ChargeLevelWithStatusDTO> | null;

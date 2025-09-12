@@ -1,7 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { PATHS } from '../../constants/paths.constants';
-import { Home } from '../../pages/Home';
-import { AppRoute } from '../AppRoute';
+import { lazy } from 'react';
+import AppRoute from '../AppRoute/AppRoute';
+
+const Home = lazy(() => import('../../pages/Home'))
 
 const AppRoutes: React.FC = () => {
     return (

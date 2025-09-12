@@ -1,1 +1,2 @@
-export { default as ChartLegend } from './ChartLegend';
+import ChartLegend from './ChartLegend';
+export default ChartLegend;
