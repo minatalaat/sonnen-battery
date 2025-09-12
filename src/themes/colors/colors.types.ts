@@ -3,6 +3,7 @@ export interface ColorsType {
   litePrimary: string;
   secondary: string;
   liteSecondary: string;
+  idle: string;
   charging: string;
   liteCharing: string;
   discharging: string;

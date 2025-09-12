@@ -47,7 +47,7 @@ const Home: React.FC = () => {
                 </Col>
                 <Col xs={11}>
                     <ChartContainer>
-                        <Chart data={chargeLevelEvents} xKey='date' yKey='chargingLevel' />
+                        <Chart data={chargeLevelEvents} xData={{ key: 'date', label: 'Time' }} yData={{ key: 'chargingLevel', label: 'Level' }} />
                     </ChartContainer>
                 </Col>
             </Row>

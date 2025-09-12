@@ -5,7 +5,11 @@
       "chargingLevel": 42,
       "internalEventId": 986073
     },
-
+   {
+      "date": "2024-09-03T02:00:03.736Z",
+      "chargingLevel": 42,
+      "internalEventId": 381231
+    },
     {
       "date": "2024-09-02T08:00:02.836Z",
       "chargingLevel": 44,
@@ -91,11 +95,7 @@
       "chargingLevel": 43,
       "internalEventId": 919020
     },
-    {
-      "date": "2024-09-03T02:00:03.736Z",
-      "chargingLevel": 42,
-      "internalEventId": 381231
-    },
+ 
     {
       "date": "2024-09-03T03:00:02.587Z",
       "chargingLevel": 42,

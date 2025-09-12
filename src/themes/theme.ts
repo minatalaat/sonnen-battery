@@ -9,6 +9,9 @@ export const appTheme = {
     xl: '2.5rem',
     xxl: '3rem',
   },
+  fonts: {
+    family: 'sans-serif',
+  },
   typoGraphy: {
     fontWeight: {
       bold: 700,
@@ -34,8 +37,10 @@ export const appTheme = {
   },
   chart: {
     spacing: {
+      s: 10,
       sm: 30,
       m: 40,
+      xl: 50,
     },
     barSize: {
       s1: 20,

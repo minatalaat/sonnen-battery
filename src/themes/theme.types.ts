@@ -2,6 +2,9 @@ import type { ColorsType } from './colors/colors.types';
 
 export interface ThemeType {
   colors: ColorsType;
+  fonts: {
+    family: string;
+  };
   spacing: {
     xxs: string;
     xs: string;
@@ -37,8 +40,10 @@ export interface ThemeType {
   };
   chart: {
     spacing: {
+      s: number;
       sm: number;
       m: number;
+      xl: number;
     };
     barSize: {
       s1: number;

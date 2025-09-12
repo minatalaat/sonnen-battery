@@ -4,15 +4,10 @@ import type { ChargelevelDTO, ChargeLevelWithStatusDTO } from '../dtos/chargeLev
 
 export const useFormatChargeEvents = () => {
   const { theme } = useAppTheme();
-  const getStrokeColor = (state: string): string => {
+  const getColor = (state: string): string => {
     if (state === 'charging') return theme.colors.liteCharing;
     if (state === 'discharging') return theme.colors.liteDisCharing;
-    return theme.colors.primary;
-  };
-  const getFillColor = (state: string): string => {
-    if (state === 'charging') return theme.colors.liteCharing;
-    if (state === 'discharging') return theme.colors.liteDisCharing;
-    return theme.colors.primary;
+    return theme.colors.idle;
   };
 
   const formatChargeLevelAsSegements = (data: Array<ChargelevelDTO>) => {
@@ -23,8 +18,8 @@ export const useFormatChargeEvents = () => {
       ...data?.[0],
       date: moment(data[0]?.date).format('HH-mm A'),
       status: 'idle',
-      stroke: getStrokeColor('idle'),
-      fill: getFillColor('idle'),
+      stroke: getColor('idle'),
+      fill: getColor('idle'),
     };
 
     for (let i = 1; i < data.length - 1; i++) {
@@ -41,15 +36,15 @@ export const useFormatChargeEvents = () => {
       chartData.push({
         ...current,
         status: newStatus,
-        stroke: getStrokeColor(newStatus),
-        fill: getFillColor(newStatus),
+        stroke: getColor(newStatus),
+        fill: getColor(newStatus),
       });
 
       currentSegment = {
         ...currentSegment,
         status: newStatus,
-        stroke: getStrokeColor(newStatus),
-        fill: getFillColor(newStatus),
+        stroke: getColor(newStatus),
+        fill: getColor(newStatus),
       };
     }
 
