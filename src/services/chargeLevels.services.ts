@@ -10,6 +10,8 @@ const checkValidChargeEvent = (chargeLevel: ChargelevelDTO) => {
     date instanceof Date &&
     !isNaN(date?.getTime()) &&
     typeof chargeLevel.chargingLevel === 'number' &&
+    chargeLevel.chargingLevel >= 0 &&
+    chargeLevel.chargingLevel <= 100 &&
     typeof chargeLevel.internalEventId === 'number'
   );
 };

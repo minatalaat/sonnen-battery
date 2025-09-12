@@ -13,4 +13,5 @@ export interface ColorsType {
   border: string;
   hightLightColor: string;
   error: string;
+  chartBackground: string;
 }
