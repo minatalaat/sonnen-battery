@@ -42,7 +42,7 @@ const Home: React.FC = () => {
     <Container fluid>
       <Row nogutter>
         <Col xs={8}>
-          <Typography variant="xxlText">Sonnen Battery Analyizer</Typography>
+          <Typography variant="xxlText">Sonnen Battery Activity</Typography>
         </Col>
         <Col xs={4} style={{ display: 'flex', flexDirection: 'row', gap: theme.spacing.xs, alignItems: 'center', justifyContent: 'end' }}>
           <ThemeController />
