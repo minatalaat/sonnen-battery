@@ -14,7 +14,7 @@ This application was built to highlight proficiency in the following key areas:
 - **State Management**: I implemented the Context API to manage the application's theme state.
 - **API Integration**: The application seamlessly interacts with an API to fetch charging analytic data.
 - **Styling & Design**: The UI is designed with a modern aesthetic, using Styled Components to ensure a clean and maintainable codebase.
-- **Code Quality**: I have focused on writing clean, well-structured code by separating UI, API integration, and business logic.
+- **Code Quality**: I have focused on writing clean, well-structured, well-tested code by separating UI, API integration, business logic and applying unit tests.
 
 ## Getting Started
 
@@ -83,5 +83,5 @@ The application should now be accessible in your web browser at `http://localhos
 
 Thank you for your time in reviewing this project. I'm excited about the opportunity to discuss my work with you further.
 
-- **Email**: minatalaatzaki@gmail
+- **Email**: minatalaatzaki@gmail.com
 - **Portfolio/LinkedIn**: www.linkedin.com/in/mina-talaat-03116020b
