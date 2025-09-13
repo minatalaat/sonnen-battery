@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback, type ReactNode } from 'react';
+import { useMemo, useState, useCallback, type ReactNode, useEffect } from 'react';
 import { AppTheme } from './AppTheme';
 import { MODES } from '../constants/modes.contants';
 import { ThemeProvider } from 'styled-components';
@@ -10,8 +10,7 @@ interface AppThemeProviderType {
 }
 
 const AppThemeProvider: React.FC<AppThemeProviderType> = ({ children }) => {
-  const localMode = localStorage.getItem('mode');
-  const [mode, setMode] = useState<string>(localMode ?? MODES.DARK);
+  const [mode, setMode] = useState<string | null>(MODES.DARK);
 
   const toggleTheme = useCallback(() => {
     if (mode === MODES.LIGHT) {
@@ -29,12 +28,15 @@ const AppThemeProvider: React.FC<AppThemeProviderType> = ({ children }) => {
   }, [mode]);
 
   const contextValue = useMemo(() => {
-    return { theme: modetheme, toggleTheme };
-  }, [modetheme, toggleTheme]);
+    return { theme: modetheme, mode, toggleTheme };
+  }, [mode, modetheme, toggleTheme]);
 
+  useEffect(() => {
+    setMode(MODES.DARK);
+  }, []);
   return (
     <AppTheme.Provider value={contextValue}>
-      <ThemeProvider theme={modetheme}> {children} </ThemeProvider>
+      <ThemeProvider theme={modetheme}>{children}</ThemeProvider>
     </AppTheme.Provider>
   );
 };

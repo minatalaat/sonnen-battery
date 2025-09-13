@@ -3,11 +3,13 @@ import type { ThemeType } from '../themes/theme.types';
 
 interface AppThemeType {
   theme: ThemeType;
+  mode: string;
   toggleTheme: (value: void) => void;
 }
 
 const defaultAppTheme: AppThemeType = {
   theme: {} as ThemeType,
+  mode: '',
   toggleTheme: () => {},
 };
 
