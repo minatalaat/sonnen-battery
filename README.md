@@ -46,14 +46,19 @@ cd sonnen-battery
 ```bash
 npm install
 ```
+4. Install json-server globally:
 
-4. Running json-server:
+```bash
+npm install -g json-server
+```
+
+5. Running json-server:
 
 ```bash
 json-server --watch db.json
 ```
 
-5. Running the Application:
+6. Running the Application:
 
 To start the local development server:
 
