@@ -1,4 +1,4 @@
 export const MODES = {
-    LITE:'lite',
-    DARK:'dark'
-}
+  LIGHT: 'light',
+  DARK: 'dark',
+};

@@ -3,7 +3,7 @@ import { AppTheme } from './AppTheme';
 import { MODES } from '../constants/modes.contants';
 import { ThemeProvider } from 'styled-components';
 import { appTheme } from '../themes/theme';
-import { darkColors, liteColors } from '../themes/colors/colors';
+import { darkColors, lightColors } from '../themes/colors/colors';
 
 interface AppThemeProviderType {
   children: ReactNode;
@@ -14,18 +14,18 @@ const AppThemeProvider: React.FC<AppThemeProviderType> = ({ children }) => {
   const [mode, setMode] = useState<string>(localMode ?? MODES.DARK);
 
   const toggleTheme = useCallback(() => {
-    if (mode === MODES.LITE) {
+    if (mode === MODES.LIGHT) {
       localStorage.setItem('mode', MODES.DARK);
       setMode(MODES.DARK);
     } else {
-      localStorage.setItem('mode', MODES.LITE);
-      setMode(MODES.LITE);
+      localStorage.setItem('mode', MODES.LIGHT);
+      setMode(MODES.LIGHT);
     }
   }, [mode]);
 
   const modetheme = useMemo(() => {
     if (mode === MODES.DARK) return { ...appTheme, colors: darkColors };
-    return { ...appTheme, colors: liteColors };
+    return { ...appTheme, colors: lightColors };
   }, [mode]);
 
   const contextValue = useMemo(() => {

@@ -1,4 +1,4 @@
-export const liteColors = {
+export const lightColors = {
   primary: '#0a1535',
   litePrimary: 'rgba(47, 92, 228, 1)',
   secondary: '#767676ff',
