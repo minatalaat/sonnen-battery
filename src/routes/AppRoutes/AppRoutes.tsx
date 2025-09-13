@@ -6,6 +6,9 @@ import AppRoute from '../AppRoute/AppRoute';
 const Home = lazy(() => import('../../pages/Home'))
 
 const AppRoutes: React.FC = () => {
+
+
+    // Add AppRoute to lazy load Components
     return (
 
         <Routes>

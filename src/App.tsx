@@ -15,13 +15,14 @@ const queryClient = new QueryClient({
   },
 });
 function App() {
+  //add Error Boundary to catch any exception and thrown errors
+  //Add React Query Client 
   return (
     <BrowserRouter>
       <AppLayout>
         <ErrorBoundary FallbackComponent={AppErrorBoundary}>
           <QueryClientProvider client={queryClient}>
             <AppRoutes />
-            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
           </QueryClientProvider>
         </ErrorBoundary>
       </AppLayout>

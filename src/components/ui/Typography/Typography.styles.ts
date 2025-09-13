@@ -6,7 +6,7 @@ const getDefaultTypoStyle = ({ $color, $weight, theme }: { $color?: string; $wei
   return css`
     font-weight: ${$weight ? theme.typoGraphy.fontWeight[$weight] : theme.typoGraphy.fontWeight.regular};
     color: ${$color ?? theme.colors.primary};
-    font-family: 'Roboto', sans-serif;
+    font-family: ${() => theme.fonts.family};
   `;
 };
 const getTypographyStyle = ({
@@ -22,30 +22,32 @@ const getTypographyStyle = ({
   $fontSize?: FontSize;
   $color?: string;
 }) => {
+  const genericStyles = () => getDefaultTypoStyle({ $color, $weight, theme });
+
   if ($variant === 'smText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s1};
-      ${() => getDefaultTypoStyle({ $color, $weight, theme })}
+      ${genericStyles}
     `;
   if ($variant === 'mdText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s2};
-      ${() => getDefaultTypoStyle({ $color, $weight, theme })}
+      ${genericStyles}
     `;
   if ($variant === 'lgText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s3};
-      ${() => getDefaultTypoStyle({ $color, $weight, theme })};
+      ${genericStyles}
     `;
   if ($variant === 'xlText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s4};
-      ${() => getDefaultTypoStyle({ $color, $weight, theme })}
+      ${genericStyles}
     `;
   if ($variant === 'xxlText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s5};
-      ${() => getDefaultTypoStyle({ $color, $weight, theme })}
+      ${genericStyles}
     `;
 };
 export const StyledTypography = styled.p<{

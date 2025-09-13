@@ -15,6 +15,7 @@ const Home: React.FC = () => {
   const { theme } = useAppTheme();
   const { formatChargeLevelAsSegements } = useFormatChargeEvents();
 
+  // getCharging Data handler
   const getData = async () => {
     try {
       const res = await getChargeLevels();
@@ -25,6 +26,7 @@ const Home: React.FC = () => {
     }
   };
 
+  //handle caching for 1 hour
   const { data, isLoading, error } = useQuery({
     queryKey: ['charging-data'],
     queryFn: getData,
@@ -36,6 +38,7 @@ const Home: React.FC = () => {
     throw new Error('Failed To Fetch Charging Data');
   }
   return (
+    //use react-grid-system to handle responsive
     <Container fluid>
       <Row nogutter>
         <Col xs={8}>
@@ -46,6 +49,7 @@ const Home: React.FC = () => {
         </Col>
 
         <Col sm={12}>
+          {/* Add Skeleton To placeholder chart till fetching data */}
           {isLoading ? <PlaceHolder /> : null}
           {!isLoading && data && (
             <ChartContainer>

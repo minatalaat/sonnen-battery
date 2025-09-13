@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import type { ThemeType } from '../../../themes/theme.types';
+import { popIn } from '../../../styles/animations';
 
+const PopIn = () => popIn();
 export const ToggleInput = styled.input<{ theme: ThemeType }>`
   appearance: none;
   width: 2.5rem;
@@ -13,6 +15,9 @@ export const ToggleInput = styled.input<{ theme: ThemeType }>`
 
   &:checked {
     background-color: ${({ theme }) => theme.colors.primary};
+    animation-name: ${PopIn};
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   &:checked::after {

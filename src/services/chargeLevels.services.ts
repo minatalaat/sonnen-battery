@@ -2,27 +2,28 @@ import { sonnenApi } from '../apis/sonnenApi';
 import { endPoints } from '../constants/endpoints.constants';
 import type { ChargelevelDTO } from '../dtos/chargeLevels.types';
 
-const checkValidChargeEvent = (chargeLevel: ChargelevelDTO) => {
-  const date = new Date(chargeLevel?.date);
+const checkValidChargeEvent = (chargeLevelEvent: ChargelevelDTO) => {
+  const date = new Date(chargeLevelEvent?.date);
   return (
-    chargeLevel?.date &&
-    chargeLevel?.chargingLevel &&
+    chargeLevelEvent?.date &&
+    chargeLevelEvent?.chargingLevel &&
     date instanceof Date &&
     !isNaN(date?.getTime()) &&
-    typeof chargeLevel.chargingLevel === 'number' &&
-    chargeLevel.chargingLevel >= 0 &&
-    chargeLevel.chargingLevel <= 100 &&
-    typeof chargeLevel.internalEventId === 'number'
+    typeof chargeLevelEvent.chargingLevel === 'number' &&
+    chargeLevelEvent.chargingLevel >= 0 &&
+    chargeLevelEvent.chargingLevel <= 100 &&
+    typeof chargeLevelEvent.internalEventId === 'number'
   );
 };
 export const getChargeLevels = async () => {
   try {
+    //handle Get Request of charging data
     const res = await sonnenApi.get(endPoints.chargeLevels.get);
     if (res?.data?.length === 0) return { status: false, data: [] };
     let chargeLevelsData = res?.data as Array<ChargelevelDTO>;
 
     //filter not valid events
-    chargeLevelsData = chargeLevelsData?.filter(chargeLevel => checkValidChargeEvent(chargeLevel));
+    chargeLevelsData = chargeLevelsData?.filter(chargeLevelEvent => checkValidChargeEvent(chargeLevelEvent));
 
     //sort chargeLevelsData by date
     chargeLevelsData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());

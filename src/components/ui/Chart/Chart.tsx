@@ -1,5 +1,5 @@
 import React, { type ReactElement } from 'react';
-import { Bar, BarChart, CartesianGrid, Label, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, Label, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import type { ChargeLevelWithStatusDTO } from '../../../dtos/chargeLevels.types';
 import { useAppTheme } from '../../../contexts';
 import useBreakpointCheck from '../../../hooks/useBreakpointCheck';
@@ -14,6 +14,7 @@ interface ChartProps {
 
 const Chart: React.FC<ChartProps> = ({ data, xData, yData, legend, toolTip }) => {
   const { theme } = useAppTheme();
+  //handle mobile mode
   const isMobile = useBreakpointCheck(768);
   const CustomLegend = legend ?? undefined;
   const CustomTooltip = toolTip ?? undefined;
@@ -26,21 +27,18 @@ const Chart: React.FC<ChartProps> = ({ data, xData, yData, legend, toolTip }) =>
           right: isMobile ? theme.chart.spacing.s : theme.chart.spacing.sm,
           bottom: theme.chart.spacing.xl,
         }}
-        barGap={0}
-        barCategoryGap={0}
       >
-        <CartesianGrid strokeDasharray="3 3" stroke={theme.colors.background} />
         <XAxis
           dataKey={xData.key}
           stroke={theme.colors.primary}
-          angle={-45}
+          angle={-45} // handle orientation of label of x axis
           tick={{ textAnchor: 'end', fontFamily: theme.fonts.family, color: theme.colors.primary, fontSize: theme.typoGraphy.fontSize.s3 }}
         >
           <Label
             value={xData.label}
             position="bottom"
             angle={0}
-            dy={theme.chart.spacing.sm}
+            dy={theme.chart.spacing.sm} // adds offset in y direction
             fontFamily={theme.fonts.family}
             fontSize={theme.typoGraphy.fontSize.s4}
             fill={theme.colors.primary}
@@ -57,7 +55,7 @@ const Chart: React.FC<ChartProps> = ({ data, xData, yData, legend, toolTip }) =>
             value={yData.label}
             position="center"
             angle={-90}
-            dx={-theme.chart.spacing.s}
+            dx={-theme.chart.spacing.s} // adds offset in x direction
             fontFamily={theme.fonts.family}
             fontSize={theme.typoGraphy.fontSize.s4}
             fill={theme.colors.primary}
