@@ -10,50 +10,50 @@ const getDefaultTypoStyle = ({ $color, $weight, theme }: { $color?: string; $wei
   `;
 };
 const getTypographyStyle = ({
-  variant,
+  $variant,
   theme,
   $weight,
   $fontSize,
   $color,
 }: {
-  variant?: TypographyVariant;
+  $variant?: TypographyVariant;
   theme: ThemeType;
   $weight?: FontWeight;
   $fontSize?: FontSize;
   $color?: string;
 }) => {
-  if (variant === 'smText')
+  if ($variant === 'smText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s1};
       ${() => getDefaultTypoStyle({ $color, $weight, theme })}
     `;
-  if (variant === 'mdText')
+  if ($variant === 'mdText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s2};
       ${() => getDefaultTypoStyle({ $color, $weight, theme })}
     `;
-  if (variant === 'lgText')
+  if ($variant === 'lgText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s3};
       ${() => getDefaultTypoStyle({ $color, $weight, theme })};
     `;
-  if (variant === 'xlText')
+  if ($variant === 'xlText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s4};
       ${() => getDefaultTypoStyle({ $color, $weight, theme })}
     `;
-  if (variant === 'xxlText')
+  if ($variant === 'xxlText')
     return css`
       font-size: ${$fontSize ? theme.typoGraphy.fontSize[$fontSize] : theme.typoGraphy.fontSize.s5};
       ${() => getDefaultTypoStyle({ $color, $weight, theme })}
     `;
 };
 export const StyledTypography = styled.p<{
-  variant: TypographyVariant;
+  $variant: TypographyVariant;
   $color?: string;
   theme: ThemeType;
   $weight?: FontWeight;
   $fontSize?: FontSize;
 }>`
-  ${({ variant, $color, theme, $weight, $fontSize }) => getTypographyStyle({ variant, $color, theme, $weight, $fontSize })}
+  ${({ $variant, $color, theme, $weight, $fontSize }) => getTypographyStyle({ $variant, $color, theme, $weight, $fontSize })}
 `;
