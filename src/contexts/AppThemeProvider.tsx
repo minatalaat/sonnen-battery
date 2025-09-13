@@ -11,7 +11,7 @@ interface AppThemeProviderType {
 
 const AppThemeProvider: React.FC<AppThemeProviderType> = ({ children }) => {
   const localMode = localStorage.getItem('mode');
-  const [mode, setMode] = useState<string>(localMode ?? MODES.LITE);
+  const [mode, setMode] = useState<string>(localMode ?? MODES.DARK);
 
   const toggleTheme = useCallback(() => {
     if (mode === MODES.LITE) {
