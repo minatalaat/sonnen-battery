@@ -70,7 +70,8 @@ The application should now be accessible in your web browser at `http://localhos
 
 ## A Glimpse of the App
 
-<img width="1912" height="852" alt="image" src="https://github.com/user-attachments/assets/c7eb2528-e59d-4d15-9e5c-7f86702380bb" />
+<img width="1912" height="566" alt="image" src="https://github.com/user-attachments/assets/626788e7-a391-4f40-b93d-21d2f02ae07f" />
+
 
 
 ## Design Decisions & Architectural Choices
